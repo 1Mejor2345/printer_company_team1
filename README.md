@@ -8,23 +8,22 @@ Ejemplo: una aplicación usa el método `imprimir()`, mientras que una impresora
 
 | Archivo | Función |
 | --- | --- |
-| `poo/Impresora.java` | Interfaz que define el método moderno. |
-| `poo/ImpresoraAntigua.java` | Clase con el método heredado. |
-| `poo/AdaptadorImpresora.java` | Implementa `Impresora` y delega en la clase antigua. |
-| `poo/GestorImpresiones.java` | Singleton que centraliza el contador. |
-| `poo/Main.java` | Demuestra ambos patrones. |
+| `src/main/java/Impresora.java` | Interfaz que define el método moderno. |
+| `src/main/java/ImpresoraAntigua.java` | Clase con el método heredado. |
+| `src/main/java/AdaptadorImpresora.java` | Implementa `Impresora` y delega en la clase antigua. |
+| `src/main/java/GestorImpresiones.java` | Singleton que centraliza el contador. |
+| `src/main/java/Main.java` | Demuestra ambos patrones. |
 | `uml/*.dot` | Diagramas UML editables con Graphviz. |
 
-### Ejecución en VS Code (JDK 17 o superior)
+### Proyecto Maven y ejecución en VS Code (JDK 17 o superior)
 
 1. Clonar el repositorio y abrirlo en Visual Studio Code.
 2. Abrir la terminal integrada.
 3. Ejecutar:
 
 ```bash
-cd poo
-javac *.java
-java Main
+mvn clean package
+java -jar target/printer-company-1.0.0.jar
 ```
 
 Salida esperada:
@@ -36,7 +35,7 @@ Mismo gestor: true
 Total de impresiones: 2
 ```
 
-Para el informe, tomar **capturas auténticas de VS Code** mostrando el código Java, los diagramas UML y la terminal integrada con el resultado de la ejecución. Las imágenes aún deben realizarse en el equipo del grupo.
+El archivo `pom.xml` configura compilación con `release 17` y un JAR ejecutable cuyo punto de entrada es `Main`. Maven coloca los archivos generados en `target/`, excluido del control de versiones. No hay dependencias de aplicación ni pruebas automatizadas: `mvn package` verifica la compilación y el empaquetado; la ejecución del JAR es la comprobación funcional de la salida indicada. Las capturas del informe deben proceder del editor y de la terminal integrada reales de VS Code.
 
 ## Secciones pendientes para el equipo
 
