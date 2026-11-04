@@ -13,7 +13,7 @@ Ejemplo: una aplicación usa el método `imprimir()`, mientras que una impresora
 | `src/main/java/AdaptadorImpresora.java` | Implementa `Impresora` y delega en la clase antigua. |
 | `src/main/java/GestorImpresiones.java` | Singleton que centraliza el contador. |
 | `src/main/java/Main.java` | Demuestra ambos patrones. |
-| `uml/*.dot` | Diagramas UML editables con Graphviz. |
+| `uml/*.drawio` y `uml/*.svg` | Diagramas de clases UML editables en diagrams.net y sus imágenes vectoriales. |
 
 ### Proyecto Maven y ejecución en VS Code (JDK 17 o superior)
 
@@ -50,3 +50,9 @@ Las secciones B y C **no están implementadas todavía**. Partir de este ejemplo
 - [Documento colaborativo](https://docs.google.com/document/d/1PgNbtRzagDtu18S4UhwMwKrN8vdNpoLTkBY7qKO93ew/edit)
 
 Equipo: José Luis Paladines Sánchez, Julinho Jesús Plua Mendosa y Víctor Alfonso Marriott Espinoza.
+
+## Notación UML
+
+Los diagramas de clases usan compartimentos de nombre, atributos y operaciones; visibilidad `+`/`-`, miembros estáticos subrayados y tipos de parámetros y retornos. Adapter es por objeto: realización de `Impresora` (línea discontinua con triángulo hueco) y asociación navegable hacia `ImpresoraAntigua`, con multiplicidad 1 bajo el supuesto de referencia no nula. No se usa composición porque el objeto antiguo se crea fuera del adaptador. Singleton muestra el constructor privado y el atributo y método estáticos. Cada diagrama es una vista del patrón, no un inventario de todas las dependencias del programa.
+
+La presentación sigue los ejemplos de clase de `05LenguajeUnificadoModelado` (pp. 54-56), `08PatronesEstructurales` (p. 13, Adapter Objeto) y `07PatronesDiseño` (p. 42, Singleton). Las diapositivas no se redistribuyen en este repositorio.
