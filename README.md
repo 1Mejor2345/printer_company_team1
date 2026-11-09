@@ -15,6 +15,16 @@ Ejemplo: una aplicación usa el método `imprimir()`, mientras que una impresora
 | `src/main/java/Main.java` | Demuestra ambos patrones. |
 | `uml/*.dot` | Diagramas UML editables con Graphviz. |
 
+## Sección C - Singleton orientado a aspectos (implementado)
+
+El aspecto intercepta las llamadas al constructor de `GestorImpresiones` y reutiliza la primera instancia. `MainAOP` comprueba que las referencias y el contador sean compartidos. Requiere compilar con AspectJ.
+
+| Archivo | Función |
+| --- | --- |
+| `src/singleton/java/GestorImpresiones.java` | Clase del gestor, sin lógica Singleton. |
+| `src/singleton/SingletonGestorImpresiones.aj` | Controla la instancia única e introduce `getInstancia()`. |
+| `src/singleton/java/MainAOP.java` | Prueba los accesos y compara las referencias. |
+
 ### Proyecto Maven y ejecución en VS Code (JDK 17 o superior)
 
 1. Clonar el repositorio y abrirlo en Visual Studio Code.
@@ -40,7 +50,8 @@ El archivo `pom.xml` configura compilación con `release 17` y un JAR ejecutable
 ## Secciones pendientes para el equipo
 
 - **B - Adapter con AspectJ:** implementar y comparar con la versión OO.
-- **C - Singleton con AspectJ:** implementar y comparar con la versión OO.
+
+
 
 Las secciones B y C **no están implementadas todavía**. Partir de este ejemplo, mantener la versión OO y añadir el código AspectJ en carpetas independientes. No presentar capturas simuladas.
 
