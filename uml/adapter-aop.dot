@@ -1,0 +1,11 @@
+digraph AdapterAOP {
+  graph [rankdir=LR, bgcolor="white"];
+  node [shape=record, fontname="Arial"];
+  target [label="{«interface» Impresora|+ imprimir(documento: String): void}"];
+  legacy [label="{ImpresoraAntigua|+ imprimirTexto(texto: String): void|+ imprimir(documento: String): void [ITD]}"];
+  aspect [label="{«aspect» AdapterAspect|declare parents|introduce imprimir(String)}"];
+  client [label="{MainAOP / GestorImpresiones|usa Impresora}"];
+  legacy -> target [style=dashed, arrowhead=empty, label="realización introducida"];
+  aspect -> legacy [style=dashed, label="ITD / tejido ajc"];
+  client -> target [label="imprimir(documento)"];
+}

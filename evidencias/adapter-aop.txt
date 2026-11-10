@@ -1,0 +1,14 @@
+Adapter AOP - ejecución verificada
+JDK 25.0.3; AspectJ 1.9.25; ajc -17
+Comando: ./scripts/adapter.ps1 -AspectJHome C:/aspectj/lib
+
+ISourceLocation.NO_FILE Extending interface set for type 'ImpresoraAntigua' (ImpresoraAntigua.java) to include 'Impresora' (AdapterAspect.aj)
+	see also: src\main\java\ImpresoraAntigua.java:1::13
+src\main\java\ImpresoraAntigua.java:1 Type 'ImpresoraAntigua' (ImpresoraAntigua.java) has intertyped method from 'AdapterAspect' (AdapterAspect.aj:'void ImpresoraAntigua.imprimir(java.lang.String)')
+	see also: src\adapter\AdapterAspect.aj:1::14
+Impresora antigua: Tarea de Java
+Impresora antigua: Diagrama UML
+Mismo gestor: true
+Total de impresiones: 2
+
+Control sin tejido: javac --release 17 rechaza la asignación de ImpresoraAntigua a Impresora (incompatible types).
