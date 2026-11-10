@@ -1,9 +1,0 @@
-digraph Singleton {
-  graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.65", ranksep="0.65"];
-  node [shape=record, fontname="DejaVu Sans", fontsize=11, style=rounded, color="#2D5873"];
-  edge [fontname="DejaVu Sans", fontsize=9, color="#607588"];
-  main [label="{Main|gestor1 == gestor2}"];
-  s [label="{GestorImpresiones «Singleton»|- INSTANCIA: GestorImpresiones (static final)\l- total: int\l|- GestorImpresiones()\l+ getInstancia(): GestorImpresiones (static)\l+ imprimir(impresora, documento): void\l+ getTotal(): int\l}"];
-  main -> s [label="getInstancia() dos veces"];
-  s -> s [label="INSTANCIA: objeto único", color="#168071"];
-}
